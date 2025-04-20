@@ -3,7 +3,8 @@ const path = require("path");
 const app = express();
 
 const port = 3000;
-app.use(express.static("./public"));
+
+// app.use(express.static("./public"));
 
 // app.get("/", (req, res) => {
 //   console.log(req);
@@ -13,6 +14,10 @@ app.use(express.static("./public"));
 // app.all("*", (req, res) => {
 //   res.status(404).send("<h1>Page not found</h1>");
 // });
+
+app.get("/", (req, res) => {
+  res.json([{ name: "hans rohit" }, { name: "jinju" }]);
+});
 
 app.listen(port, function (err) {
   if (err) console.log(err);
