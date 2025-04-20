@@ -1,0 +1,15 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+.nav{
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+    color: gold;
+}
+
+.nav h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
