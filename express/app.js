@@ -62,7 +62,6 @@ const port = 3000;
 //   }
 //   res.status(200).json(sortedStudents);
 // });
-
 const logger = (req, res, next) => {
   const url = req.url;
   const method = req.method;
@@ -71,8 +70,17 @@ const logger = (req, res, next) => {
   // res.send("testing");
   next();
 };
+const authorize = (req, res, next) => {
+  const url = req.url;
+  const method = req.method;
+  const time = new Date().getFullYear();
+  console.log("authorize accessed!");
+  // res.send("testing");
+  next();
+};
+app.use("/", [logger, authorize]);
 
-app.get("/", logger, (req, res) => {
+app.get("/", (req, res) => {
   res.send("home");
 });
 
